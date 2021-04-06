@@ -17,8 +17,7 @@ const appSetup = ({ useLogger, useCors, useNoCache, useHelmet }) => {
     app.use(nocache());
   }
   if (useHelmet) {
-    app.use(helmet.xssFilter());
-    app.use(helmet.referrerPolicy({ policy: "same-origin" }));
+    app.use(helmet());
   }
 
   app.use(express.json());
@@ -28,3 +27,8 @@ const appSetup = ({ useLogger, useCors, useNoCache, useHelmet }) => {
 };
 
 module.exports = appSetup;
+module.exports.configOptions = {
+  helmet,
+  cors,
+  logger,
+};
