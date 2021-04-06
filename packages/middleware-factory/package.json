@@ -1,0 +1,26 @@
+{
+  "name": "@rapidcode/middleware-factory",
+  "version": "0.0.0",
+  "description": "wraps normal functions in express middlewares",
+  "author": "Tirtha Guha <tirtha.guha@gmail.com>",
+  "homepage": "https://github.com/tirthaguha/rapidcode#readme",
+  "license": "MIT",
+  "main": "lib/middleware-factory.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tirthaguha/rapidcode.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tirthaguha/rapidcode/issues"
+  }
+}
