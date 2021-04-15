@@ -1,4 +1,7 @@
 "use strict";
+const { createLogger, format, transports } = require("winston");
+const { combine, timestamp, label, printf } = format;
+
 const levels = {
   error: 0,
   warn: 1,
@@ -8,25 +11,9 @@ const levels = {
   debug: 5,
   silly: 6,
 };
-let defaultLogLevel = levels.silly;
-const setDefaultLogLevel = (level) => {
-  defaultLogLevel = level;
-};
-const logger = {
-  debug: (data) => {
-    console.log(data);
-  },
-  info: (data) => {
-    console.log(data);
-  },
-  warn: (data) => {
-    console.warn(data);
-  },
-  error: (data) => {
-    console.error(data);
-  },
-  levels,
-  setDefaultLevel: setDefaultLogLevel,
-};
+
+const logger = createLogger({
+  transports: [new transports.Console()],
+});
 
 module.exports = logger;
