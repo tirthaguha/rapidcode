@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/tirthaguha/rapidcode/issues"
+  },
+  "dependencies": {
+    "@rapidcode/logger": "^0.0.0"
   }
 }
