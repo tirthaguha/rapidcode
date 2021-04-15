@@ -1,6 +1,5 @@
 "use strict";
 const appSetup = require("./app");
-const { configOptions } = require("./app");
 const {
   createMultipleRouteConfigs,
   createRouteConfig,
@@ -11,5 +10,4 @@ module.exports = {
   createMultipleRouteConfigs,
   createRouteConfig,
   registerRouteWithApp,
-  configOptions,
 };
