@@ -1,19 +1,20 @@
 "use strict";
-const { createLogger, format, transports } = require("winston");
-const { combine, timestamp, label, printf } = format;
 
-const levels = {
-  error: 0,
-  warn: 1,
-  info: 2,
-  http: 3,
-  verbose: 4,
-  debug: 5,
-  silly: 6,
-};
+const createLogger = require("../../../common/logger");
 
-const logger = createLogger({
-  transports: [new transports.Console()],
-});
+// const logHandler = {
+//   apply: async (target, thisArg, argumentList) => {
+//     logger.info("Entry");
+//     const t1 = Date.now();
+//     await target(...argumentList);
+//     const t2 = Date.now();
+//     logger.info(`Time Taken to execute async ${target.name} is ${t2 - t1}`);
+//     logger.info("Exit");
+//   },
+// };
 
-module.exports = logger;
+// const withLogger = (middleware) => {
+//   const proxy = new Proxy(middleware, logHandler);
+// };
+
+module.exports = createLogger;
