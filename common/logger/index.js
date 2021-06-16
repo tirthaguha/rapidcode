@@ -1,6 +1,4 @@
-const { level } = require("../../packages/logger/lib/logger");
-
-const levels = {
+const LEVELS = {
   error: 0,
   warn: 1,
   info: 2,
@@ -10,82 +8,82 @@ const levels = {
   silly: 6,
 };
 
-class Logger {
+function Logger() {
   loggerId = "";
-  logLevel = levels.silly;
+  logLevel = LEVELS.silly;
 
-  setLoggerId(id) {
+  this.setLoggerId = function (id) {
     this.loggerId = id;
-  }
+  };
 
-  getAllLevels() {
-    return levels;
-  }
-  setLogLevel(level) {
+  this.getAllLevels = function () {
+    return LEVELS;
+  };
+  this.setLogLevel = function (level) {
     this.logLevel = level;
-  }
+  };
 
-  log(msg, level) {
+  this.log = function (msg, level) {
     switch (level) {
-      case levels.error:
+      case LEVELS.error:
         this.error(msg);
         break;
-      case levels.warn:
+      case LEVELS.warn:
         this.warn(msg);
         break;
-      case levels.info:
+      case LEVELS.info:
         this.info(msg);
         break;
-      case levels.http:
+      case LEVELS.http:
         this.http(msg);
         break;
-      case levels.verbose:
+      case LEVELS.verbose:
         this.verbose(msg);
         break;
-      case levels.debug:
+      case LEVELS.debug:
         this.debug(msg);
         break;
-      case levels.silly:
+      case LEVELS.silly:
         this.silly(msg);
         break;
       default:
         this.verbose(msg);
         break;
     }
-  }
-  error(params) {
+  };
+  this.error = function (params) {
     console.log(params);
-  }
-  warn(params) {
-    if (this.logLevel >= levels.warn) {
+  };
+  this.warn = function (params) {
+    if (this.logLevel >= LEVELS.warn) {
       console.log(params);
     }
-  }
-  info(params) {
-    if (this.logLevel >= levels.info) {
+  };
+  this.info = function (params) {
+    if (this.logLevel >= LEVELS.info) {
       console.log(params);
     }
-  }
-  http(params) {
-    if (this.logLevel >= levels.http) {
+  };
+  this.http = function (params) {
+    if (this.logLevel >= LEVELS.http) {
       console.log(params);
     }
-  }
-  verbose(params) {
-    if (this.logLevel >= levels.verbose) {
+  };
+  this.verbose = function (params) {
+    if (this.logLevel >= LEVELS.verbose) {
       console.log(params);
     }
-  }
-  debug(params) {
-    if (this.logLevel >= levels.debug) {
+  };
+  this.debug = function (params) {
+    if (this.logLevel >= LEVELS.debug) {
       console.log(params);
     }
-  }
-  silly(params) {
-    if (this.logLevel >= levels.silly) {
+  };
+  this.silly = function (params) {
+    if (this.logLevel >= LEVELS.silly) {
       console.log(params);
     }
-  }
+  };
 }
 
 function randomString(length, chars) {
@@ -106,11 +104,3 @@ const createLogger = () => {
 };
 
 module.exports = createLogger;
-
-// const logger = createLogger();
-// logger.setLogLevel(logger.getAllLevels().silly);
-// logger.log("Hello World");
-
-// const logger_two = createLogger();
-// logger_two.setLogLevel(logger_two.getAllLevels().warn);
-// logger_two.log("Hello World");
