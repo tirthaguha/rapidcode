@@ -1,20 +1,20 @@
 "use strict";
+// const { info } = require("winston");
+const { createLogger, format, transports } = require("winston");
+const { combine, timestamp, label, printf } = format;
 
-const createLogger = require("../../../common/logger");
+const myFormat = printf(({ level, message, label, timestamp }) => {
+  return `${timestamp} [${label}] ${level}: ${message}`;
+});
 
-// const logHandler = {
-//   apply: async (target, thisArg, argumentList) => {
-//     logger.info("Entry");
-//     const t1 = Date.now();
-//     await target(...argumentList);
-//     const t2 = Date.now();
-//     logger.info(`Time Taken to execute async ${target.name} is ${t2 - t1}`);
-//     logger.info("Exit");
-//   },
-// };
+const createWinstonLogger = (level = "info") => {
+  const defaultLogLevel = level;
+  const logger = createLogger({
+    level: defaultLogLevel,
+    format: combine(label({ label: "right meow!" }), timestamp(), myFormat),
+    transports: [new transports.Console()],
+  });
+  return logger;
+};
 
-// const withLogger = (middleware) => {
-//   const proxy = new Proxy(middleware, logHandler);
-// };
-
-module.exports = createLogger;
+module.exports = createWinstonLogger;

@@ -11,7 +11,7 @@ module.exports = {
     },
   },
   externals: {
-    express: "express",
+    winston: "winston",
   },
   mode: "development",
 };
