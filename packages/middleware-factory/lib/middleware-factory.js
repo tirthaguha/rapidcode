@@ -1,7 +1,7 @@
 "use strict";
 
-const createLogger = require("../../../common/logger");
-const logger = createLogger();
+// const createLogger = require("../../../common/logger");
+// const logger = createLogger();
 
 const middlewareFactory = {
   createMiddleware:
@@ -25,12 +25,12 @@ const middlewareFactory = {
           ? await func(req, res.locals)
           : await func();
         const t2 = Date.now();
-        logger.info(`Time Taken to execute async ${func.name} is ${t2 - t1}`);
+        console.info(`Time Taken to execute async ${func.name} is ${t2 - t1}`);
         res.locals[`${func.name}Response`] = response;
-        logger.info("response = " + JSON.stringify(response));
+        console.info("response = " + JSON.stringify(response));
         next();
       } catch (error) {
-        logger.error(error);
+        console.error(error);
         next({ message: error });
       }
     },
