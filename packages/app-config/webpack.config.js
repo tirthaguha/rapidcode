@@ -1,5 +1,4 @@
 const path = require("path");
-console.log("Here, module loaded");
 
 module.exports = {
   entry: "./lib/app-config.js",

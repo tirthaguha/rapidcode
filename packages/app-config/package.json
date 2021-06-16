@@ -5,7 +5,7 @@
   "author": "Tirtha Guha <tirtha.guha@gmail.com>",
   "homepage": "https://github.com/tirthaguha/rapidcode#readme",
   "license": "MIT",
-  "module": "dist/webpack-numbers.js",
+  "main": "dist/app-config.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
