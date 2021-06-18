@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest --watch"
   },
   "bugs": {
     "url": "https://github.com/tirthaguha/rapidcode/issues"
@@ -31,6 +32,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "jest": "^27.0.4",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   }

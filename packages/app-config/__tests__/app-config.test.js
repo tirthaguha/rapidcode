@@ -1,7 +1,10 @@
-'use strict';
+"use strict";
 
-const appConfig = require('..');
+const appSetup = require("../lib/app");
 
-describe('@rapidcode/app-config', () => {
-    it('needs tests');
+describe("@rapidcode/app-config", () => {
+  test("appSetup: if app is created", () => {
+    const app = appSetup();
+    expect(app).toBeDefined();
+  });
 });
