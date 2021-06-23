@@ -10,15 +10,16 @@ const config = {
   ],
   coverageDirectory: "coverage",
   coverageReporters: ["json", "lcov"],
-  // coverageThreshold: {
-  //   global: {
-  //     branches: 80,
-  //     functions: 80,
-  //     lines: 80,
-  //     statements: 80,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 66,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
   rootDir: ".",
+  roots: ["lib", "__tests__"],
   testEnvironment: "node",
 };
 
