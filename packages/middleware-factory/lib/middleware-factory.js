@@ -1,7 +1,7 @@
 "use strict";
 
-// const createLogger = require("../../../common/logger");
-// const logger = createLogger();
+const createWinstonLogger = require("@rapidcode/logger");
+const logger = createWinstonLogger();
 
 const middlewareFactory = {
   createMiddleware:
@@ -25,12 +25,12 @@ const middlewareFactory = {
           ? await func(req, res.locals)
           : await func();
         const t2 = Date.now();
-        console.info(`Time Taken to execute async ${func.name} is ${t2 - t1}`);
+        logger.info(`Time Taken to execute async ${func.name} is ${t2 - t1}`);
         res.locals[`${func.name}Response`] = response;
-        console.info("response = " + JSON.stringify(response));
+        logger.info("response = " + JSON.stringify(response));
         next();
       } catch (error) {
-        console.error(error);
+        logger.error(error);
         next({ message: error });
       }
     },

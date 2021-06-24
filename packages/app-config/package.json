@@ -21,9 +21,8 @@
     "url": "git+https://github.com/tirthaguha/rapidcode.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "webpack",
-    "test": "jest --coverage --watchAll"
+    "test": "jest --coverage --watchAll",
+    "build": "rimraf ./dist && webpack"
   },
   "bugs": {
     "url": "https://github.com/tirthaguha/rapidcode/issues"
@@ -33,6 +32,7 @@
   },
   "devDependencies": {
     "jest": "^27.0.4",
+    "rimraf": "^3.0.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   }
