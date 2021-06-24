@@ -31,6 +31,6 @@
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
-    "@rapidcode/logger": "^0.0.0"
+    "@rapidcode/logger": "file://../logger"
   }
 }

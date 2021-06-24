@@ -1,7 +1,7 @@
 "use strict";
 
 const createWinstonLogger = require("@rapidcode/logger");
-const logger = new createWinstonLogger();
+const logger = createWinstonLogger();
 
 const middlewareFactory = {
   createMiddleware:
