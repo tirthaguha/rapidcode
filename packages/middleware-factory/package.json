@@ -25,6 +25,7 @@
     "url": "https://github.com/tirthaguha/rapidcode/issues"
   },
   "devDependencies": {
+    "jest": "^27.0.4",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   }

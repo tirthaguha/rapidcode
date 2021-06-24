@@ -1,5 +1,10 @@
 const express = require("express");
 
+const routerErrorObj = {
+  ROUTER_UNDEFINED_CONTROLLER:
+    "Controller is undefined or is not a valid function",
+};
+
 const addGenericErrorHandler = (app) => {
   app.use((req, res, next) => {
     next({ status: 404, message: "invalid route" });
@@ -27,26 +32,27 @@ const registerRouteWithApp = (app, routes, useGenericErrorHandlers) => {
 };
 
 const createRouteConfig = ({
-  path,
-  method,
-  middlewares,
+  path = "/",
+  method = "GET",
+  middlewares = [],
   controller,
   router = express.Router(),
 }) => {
-  router.route(path)[method.toLowerCase()](...middlewares, controller);
-  return router;
-};
+  if (!controller || typeof controller != "function") {
+    throw routerErrorObj.ROUTER_UNDEFINED_CONTROLLER;
+  }
 
-const createMultipleRouteConfigs = (routeConfig) => {
-  const router = express.Router();
-  routeConfig.forEach((config) => {
-    createRouteConfig({ ...config, router });
-  });
+  if (middlewares.length) {
+    router.route(path)[method.toLowerCase()](...middlewares, controller);
+  } else {
+    router.route(path)[method.toLowerCase()](controller);
+  }
+
   return router;
 };
 
 module.exports = {
-  createMultipleRouteConfigs,
   createRouteConfig,
   registerRouteWithApp,
+  routerErrorObj,
 };
