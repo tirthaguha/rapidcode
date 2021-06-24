@@ -12,6 +12,7 @@ module.exports = {
   },
   externals: {
     express: "express",
+    "@rapidcode/logger": "@rapidcode/logger",
   },
   mode: "development",
 };
