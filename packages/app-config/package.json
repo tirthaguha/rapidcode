@@ -1,6 +1,6 @@
 {
   "name": "@rapidcode/app-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Express application setup",
   "author": "Tirtha Guha <tirtha.guha@gmail.com>",
   "homepage": "https://github.com/tirthaguha/rapidcode#readme",

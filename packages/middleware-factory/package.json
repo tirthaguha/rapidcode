@@ -1,6 +1,6 @@
 {
   "name": "@rapidcode/middleware-factory",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "wraps normal functions in express middlewares",
   "author": "Tirtha Guha <tirtha.guha@gmail.com>",
   "homepage": "https://github.com/tirthaguha/rapidcode#readme",
