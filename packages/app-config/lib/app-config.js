@@ -1,15 +1,10 @@
 "use strict";
-const appSetup = require("./app");
-const {
-  createMultipleRouteConfigs,
-  createRouteConfig,
-  registerRouteWithApp,
-} = require("./router");
-const RouteBuilder = require("./route-builder");
+const createExpressApp, {registerRouteWithApp} = require("./appCreator");
+const { createRouteConfig } = require("./routeBuilder/createRoute");
+const RouteBuilder = require("./routeBuilder/buildRoute");
 
 module.exports = {
-  appSetup,
-  createMultipleRouteConfigs,
+  createExpressApp,
   createRouteConfig,
   registerRouteWithApp,
   RouteBuilder,

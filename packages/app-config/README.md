@@ -1,8 +1,10 @@
 # `@rapidcode/app-config`
 
-> TODO: description
+> create a minimal config express app and routes
 
 ## Usage
+
+### Creating an App
 
 ```
 const appConfig = require('@rapidcode/app-config');
