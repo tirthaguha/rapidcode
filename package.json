@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "lerna": "lerna",
-    "commit": "cz",
-    "prepare": "husky install"
+    "commit": "cz"
   },
   "devDependencies": {
     "commitizen": "^4.2.4",
