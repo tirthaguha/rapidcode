@@ -1,6 +1,6 @@
 {
   "name": "@rapidcode/route",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Create Routes for express applications",
   "keywords": [
     "route",
