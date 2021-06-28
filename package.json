@@ -3,12 +3,12 @@
   "private": true,
   "scripts": {
     "lerna": "lerna",
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "6.0.0",
     "lerna": "^4.0.0"
   },
   "config": {

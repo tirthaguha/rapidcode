@@ -1,6 +1,16 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
+  "command": {
+    "version": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
+      "createRelease": "github",
+      "exact": true,
+      "message": "chore(release): %s"
+    },
+    "publish": {
+      "message": "chore(release): publish"
+    }
+  },
   "version": "0.1.0"
 }

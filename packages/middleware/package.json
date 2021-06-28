@@ -1,0 +1,38 @@
+{
+  "name": "@rapidcode/middleware",
+  "version": "0.1.0",
+  "description": "middleware, express, apis",
+  "author": "Tirtha Guha <tirtha.guha@gmail.com>",
+  "homepage": "https://github.com/tirthaguha/rapidcode#readme",
+  "license": "ISC",
+  "main": "dist/middleware.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tirthaguha/rapidcode.git"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && webpack"
+  },
+  "bugs": {
+    "url": "https://github.com/tirthaguha/rapidcode/issues"
+  },
+  "devDependencies": {
+    "jest": "^27.0.5",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "@rapidcode/logger": "file://../logger"
+  }
+}
