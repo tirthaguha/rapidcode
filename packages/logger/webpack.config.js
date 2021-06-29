@@ -13,5 +13,5 @@ module.exports = {
   externals: {
     winston: "winston",
   },
-  mode: "development",
+  mode: "production",
 };

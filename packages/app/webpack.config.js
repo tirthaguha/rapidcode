@@ -12,5 +12,5 @@ module.exports = {
   externals: {
     express: "express",
   },
-  mode: "development",
+  mode: "production",
 };

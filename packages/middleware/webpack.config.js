@@ -14,5 +14,5 @@ module.exports = {
     express: "express",
     "@rapidcode/logger": "@rapidcode/logger",
   },
-  mode: "development",
+  mode: "production",
 };
