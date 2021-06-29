@@ -8,5 +8,5 @@ script:
   - npm run lerna bootstrap
   - npm run lerna run build
   - echo 'Versioning with lerna'
-  - npm run lerna version --no-push
+  - npm run lerna version -- --no-push
   - echo 'End Build'
