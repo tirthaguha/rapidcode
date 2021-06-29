@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "14"
+script:
+  - echo 'Installing Dependencies'
+  - npm install
+  - echo 'Building with lerna'
+  - npm run lerna run build
+  - echo 'Versioning with lerna'
+  - npm run lerna version --conventional-commits --conventional-prerelease --force-publish
+  - echo 'End Build'
