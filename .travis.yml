@@ -8,5 +8,5 @@ script:
   - npm run lerna bootstrap
   - npm run lerna run build
   - echo 'Versioning with lerna'
-  - npm run lerna version --conventional-commits --conventional-prerelease --force-publish
+  - npm run lerna version --no-push
   - echo 'End Build'
