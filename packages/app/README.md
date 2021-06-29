@@ -1,6 +1,6 @@
 # `@rapidcode/app`
 
-> TODO: description
+> this library is a wrapper on `express()` for creating the express app and attach express routes with the app.
 
 ## Usage
 
@@ -51,3 +51,7 @@ app.listen("8000", () => {
   console.log("Running on http://localhost:8000");
 });
 ```
+
+### PS:
+
+You can create the routes using `express.Router()`, or using the [`@rapidcode/route`](../route/README.md).
