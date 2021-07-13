@@ -3,6 +3,13 @@
 const getLogger = require("@rapidcode/logger");
 const logger = getLogger("@rapidcode/middleware");
 
+const createErrorObj = (message, status = 500) => {
+  return {
+    status,
+    message,
+  };
+};
+
 const middlewareFactory = {
   createMiddleware:
     ({ log = true, func }) =>
@@ -14,7 +21,12 @@ const middlewareFactory = {
         }
         next();
       } catch (error) {
-        next({ message: error });
+        logger.error(error);
+        if (error.message && error.status) {
+          next(error);
+        } else {
+          next(createErrorObj(error));
+        }
       }
     },
 
@@ -33,7 +45,11 @@ const middlewareFactory = {
         next();
       } catch (error) {
         logger.error(error);
-        next({ message: error });
+        if (error.message && error.status) {
+          next(error);
+        } else {
+          next(createErrorObj(error));
+        }
       }
     },
 };
