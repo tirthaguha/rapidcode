@@ -3,7 +3,9 @@
 const getLogger = require("@rapidcode/logger");
 const logger = getLogger("@rapidcode/middleware");
 
-const createErrorObj = (message, status = 500) => {
+const createErrorObj = (error, status = 500) => {
+  // console.log(">>>>>>>>", error.message);
+  const {message} = error;
   return {
     status,
     message,
