@@ -9,7 +9,7 @@ const config = {
     "!**/coverage/**",
   ],
   coverageDirectory: "coverage",
-  coverageReporters: ["json", "lcov"],
+  coverageReporters: ["json", "lcov", "text"],
   coverageThreshold: {
     global: {
       branches: 90,

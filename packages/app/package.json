@@ -26,7 +26,7 @@
     "url": "git+https://github.com/tirthaguha/rapidcode.git"
   },
   "scripts": {
-    "test": "jest --coverage --watchAll",
+    "test": "rimraf ./coverage && jest --coverage",
     "build": "rimraf ./dist && webpack"
   },
   "bugs": {
