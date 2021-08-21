@@ -1,12 +1,23 @@
-const { createApp } = require("@rapidcode/app");
+const { createApp, registerRoute, addMiddleware } = require("@rapidcode/app");
 var usersRouter = require("./routes/users");
+const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
+const nocache = require('nocache');
+const helmet = require('helmet');
+const cors = require('cors');
 
 var app = createApp();
 
-app.use("/users", usersRouter);
+addMiddleware(app, morgan('dev'));
+addMiddleware(app, cors());
+addMiddleware(app, nocache());
+addMiddleware(app, helmet());
+addMiddleware(app, cookieParser());
+
+registerRoute(app, '/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+addMiddleware(app, (req, res, next) => {
   const { path } = req;
   let err = {
     message: `Path ${path} not Found`,

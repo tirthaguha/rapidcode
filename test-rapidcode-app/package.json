@@ -3,12 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www --watch src"
   },
   "dependencies": {
     "@rapidcode/app": "file:../packages/app",
     "@rapidcode/logger": "file:../packages/logger",
     "@rapidcode/middleware": "file:../packages/middleware",
-    "@rapidcode/route": "file:../packages/route"
+    "@rapidcode/route": "file:../packages/route",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
+    "nocache": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
