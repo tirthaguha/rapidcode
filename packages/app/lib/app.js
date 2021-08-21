@@ -19,4 +19,8 @@ const registerMultipleRoutes = (app, routes) => {
   });
 };
 
-module.exports = { createApp, registerRoute, registerMultipleRoutes };
+const addMiddleware = (app, middleware) => {
+  app.use(middleware);
+}
+
+module.exports = { createApp, registerRoute, registerMultipleRoutes, addMiddleware };
