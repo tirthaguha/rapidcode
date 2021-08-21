@@ -1,7 +1,7 @@
 "use strict";
 const express = require("express");
 
-const { createApp, registerMultipleRoutes } = require("..");
+const { createApp, registerMultipleRoutes, addMiddleware } = require("../lib/app");
 
 describe("@rapidcode/app", () => {
   test("test app", () => {
@@ -47,12 +47,10 @@ describe("@rapidcode/app", () => {
     app._router.stack.forEach(function (middleware) {
       routerRecursion(middleware, routes)
     });
-    console.log(JSON.stringify(routes,null, 2));
-
-    
+    // console.log(JSON.stringify(routes,null, 2));
 
     // console.log(app._router.stack.filter(r=>r))
-    expect(routes).toMatchObject(  {
+    expect(routes).toMatchObject({
       "users": {
         "routes": [
           {
@@ -71,4 +69,15 @@ describe("@rapidcode/app", () => {
       }
     });
   });
+
+  test("test adding middleware", ()=>{
+    const app = createApp();
+    const usingNamedMiddleware = (req, res, next)=>{
+      next();
+    }
+    addMiddleware(app, usingNamedMiddleware);
+    
+    const registeredMiddleware = app._router.stack.filter(mw=>mw.name==='usingNamedMiddleware')
+    expect(registeredMiddleware.length).toBe(1);
+  })
 });
