@@ -5,7 +5,7 @@ script:
   - echo 'Installing Dependencies'
   - npm install
   - echo 'Building with lerna'
-  - npm run lerna bootstrap
+  - npm run lerna bootstrap --hoist
   - npm run lerna run test
   - npm run lerna run build
   - echo 'End Build'
