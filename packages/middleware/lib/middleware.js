@@ -4,8 +4,7 @@ const getLogger = require("@rapidcode/logger");
 const logger = getLogger("@rapidcode/middleware");
 
 const createErrorObj = (error, status = 500) => {
-  // console.log(">>>>>>>>", error.message);
-  const {message} = error;
+  const { message } = error;
   return {
     status,
     message,
@@ -39,14 +38,18 @@ const middlewareFactory = {
         const t1 = Date.now();
         const response = await func(req, res);
         const t2 = Date.now();
-        logger.info(`Time Taken to execute async ${func.name} is ${t2 - t1}`);
+        if (log) {
+          logger.info(`Time Taken to execute async ${func.name} is ${t2 - t1}`);
+        }
         if (response) {
           res.locals[`${func.name}Response`] = response;
+          if (log) {
+            logger.info("response = " + JSON.stringify(response));
+          }
         }
-        logger.info("response = " + JSON.stringify(response));
         next();
       } catch (error) {
-        logger.error(error);
+        logger.error("async error", error);
         if (error.message && error.status) {
           next(error);
         } else {
