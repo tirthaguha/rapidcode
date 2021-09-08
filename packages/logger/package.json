@@ -21,7 +21,6 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: tests are yet to be written for logger\" && exit 0",
     "build": "rimraf ./dist && webpack"
   },
   "bugs": {
