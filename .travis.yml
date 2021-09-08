@@ -6,6 +6,6 @@ script:
   - npm install
   - echo 'Building with lerna'
   - npm run lerna bootstrap
-  - npm run lerna run test -- --scope=@rapidcode/app
+  - npm run lerna run test
   - npm run lerna run build
   - echo 'End Build'
