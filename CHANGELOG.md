@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tirthaguha/rapidcode/compare/v0.1.4...v0.2.0) (2021-12-09)
+
+
+### Bug Fixes
+
+* **app:** fixed issue where coverage was not getting generated ([6d37e60](https://github.com/tirthaguha/rapidcode/commit/6d37e60d549130cf90ded2db55bf039b35176832))
+* **middleware:** fixed error structure ([2dc946d](https://github.com/tirthaguha/rapidcode/commit/2dc946d999c7c641e0b392290011350b9f56956a))
+
+
+### Features
+
+* **app:** intrduced api to add the middlewares to the app ([4079e77](https://github.com/tirthaguha/rapidcode/commit/4079e771b47612460e047fb219b3bc21f80e17a7))
+* **middleware:** better Error Handling in the Middlewares ([af4e9bd](https://github.com/tirthaguha/rapidcode/commit/af4e9bd3166d0aa817d7caada11befdca765c595))
+
+
+### Reverts
+
+* **logger:** reverted unit test placeholder\ ([d4f0cc2](https://github.com/tirthaguha/rapidcode/commit/d4f0cc2b109b0a530eaa78ddcb1244adacf28f0a))
+
+
+
+
+
 ## [0.1.4](https://github.com/tirthaguha/rapidcode/compare/v0.1.3...v0.1.4) (2021-06-29)
 
 **Note:** Version bump only for package root
