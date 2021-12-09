@@ -33,3 +33,8 @@ lerna create @rapidcode/<package_name>
 ```
 
 ## Building Versioning and Publishing
+```bash
+lerna version --conventional-commits
+npm adduser
+lerna publish from-git
+```
